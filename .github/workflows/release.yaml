@@ -1,0 +1,62 @@
+# PUBLISH VISUAL STUDIO EXTENSION & RELEASE PACKAGE
+#
+# Publish this project into the node package
+# so can access and install from the aplication
+# Publish using azure publisher
+# ***** NOTE *****
+# Every tag & release created will automatically create a new
+# version of packages
+
+name: Release & Publish
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: 'Release ${{ github.ref_name }}'
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: huacnlee/zed-extension-action@v1
+        with:
+          extension-name: brook-code-theme
+          push-to: brook-code-theme/zed-extensions
+        env:
+          COMMITTER_TOKEN: ${{ secrets.ZED_EXTENSION_REPO_TOKEN }}
+
+  generate-changelog:
+    name: Generate Changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update changelog
+        uses: BobAnkh/auto-generate-changelog@v1.2.5
+        with:
+          ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          COMMIT_MESSAGE: '🔖 docs(CHANGELOG): update release notes'
+          TYPE: 'feat:Feature,fix:Bug Fixes,docs:Documentation,refactor:Refactor,perf:Performance Improvements'

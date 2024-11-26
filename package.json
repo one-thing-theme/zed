@@ -1,0 +1,10 @@
+{
+  "name": "brook-code-theme",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}

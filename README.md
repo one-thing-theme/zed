@@ -5,8 +5,8 @@ _Modern, minimal & simple visual studio code theme that combine black, white and
 _Screenshots:_
 
 ![Banner](https://cdn.hashnode.com/res/hashnode/image/upload/v1732187828243/cc1d78a8-387f-457e-841e-20f9528588e9.png)
-![Dark](https://cdn.hashnode.com/res/hashnode/image/upload/v1732187845467/a44cc238-ea0f-4e5e-8bad-3383e4cb50e9.png)
-![Light](https://cdn.hashnode.com/res/hashnode/image/upload/v1732187833809/3ed29c8c-c0d2-4d9b-a5f9-538d2b61fb99.png)
+![Dark](https://cdn.hashnode.com/res/hashnode/image/upload/v1732697877111/1d2058fb-5e79-4161-8eb4-d8499c417862.png)
+![Light](https://cdn.hashnode.com/res/hashnode/image/upload/v1732697882888/38a90c00-33dc-4e78-8315-3368610d46c5.png)
 
 ## Recomended settings
 

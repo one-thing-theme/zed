@@ -1,5 +1,5 @@
 {
-  "name": "brook-code-theme",
+  "name": "one-thing-theme",
   "private": true,
   "scripts": {
     "format": "prettier --write ."

@@ -1,4 +1,4 @@
-# Brook Code Theme
+# One Thing Theme
 
 _Modern, minimal & simple visual studio code theme that combine black, white and gray colors_
 
